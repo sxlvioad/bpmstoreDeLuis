@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { CartIcon } from '../icon/CartIcon'
 
 export const NavBar = () => {
     return (
@@ -34,13 +35,11 @@ export const NavBar = () => {
                                 className='me-2'
                                 aria-label='Search'
                             />
-                            <Button variant="dark">Search</Button>
+                            <Button className='px-3' variant="dark">Search</Button>
                         </Form>
-                        <Nav>
-                            <Nav.Link href="#deets">Sign Up</Nav.Link>
-                            <Nav.Link href="#deets">Login</Nav.Link>
-                        </Nav>
+
                     </Navbar.Collapse>
+                    <CartIcon />
                 </Container>
             </Navbar>
         </div>
