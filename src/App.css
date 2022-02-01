@@ -45,7 +45,20 @@
 
 .stockbtn {
   margin: 25px;
-  padding-right: 65px;
-  padding-left: 65px;
+
   background-color: white;
+}
+
+.card-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  align-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  margin-right: 10px;
 }
