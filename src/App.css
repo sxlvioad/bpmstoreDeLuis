@@ -62,3 +62,17 @@
   margin-bottom: 10px;
   margin-right: 10px;
 }
+
+.detailContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.imgDetail {
+  height: 400px;
+  width: 400px;
+}
+
+.probemos {
+  margin-top: 2%;
+}

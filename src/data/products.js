@@ -1,3 +1,5 @@
+import img from "../assets/hectoroaks.jpg"
+
 export const products = [
     {
         id: "1",
@@ -6,7 +8,8 @@ export const products = [
         genre: "Techno",
         type: "Album",
         price: "$14.99",
-        stock: "10"
+        stock: "10",
+        img: img
     },
     {
         id: "2",
