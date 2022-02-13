@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Button, Card, ListGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { ItemCount } from '../Counter/ItemCount'
 
 
-export const Item = ({ id, name, artist, genre, type, price, stock, setSelectedItem }) => {
+export const Item = ({ id, name, artist, genre, type, price, stock }) => {
     const [stockSelected, setStockSelected] = useState(0);
-    const selectItem = () => setSelectedItem({id, name, artist, stock:stockSelected})
      
      return (
         <>
@@ -21,9 +21,8 @@ export const Item = ({ id, name, artist, genre, type, price, stock, setSelectedI
                          <ListGroup.Item>Genre:{genre}</ListGroup.Item>
                          <ListGroup.Item>Price:{ price }</ListGroup.Item>
                      </ListGroup>
-                     <ItemCount stock={stock} setStockSelected={setStockSelected} />
                      
-            <Button variant="primary" onClick={selectItem}>Select</Button>
+            <Link to={`/item/${id}`}>Product Detail</Link> 
             </Card.Body>
             </Card>
         </>

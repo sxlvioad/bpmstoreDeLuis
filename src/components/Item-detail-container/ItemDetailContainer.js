@@ -1,44 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { productAPI } from '../../helpers/promise';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import useProducts from "../../hooks/useProducts";
 
-export const ItemDetailContainer = () => {
+const ItemDetailContainer = () => {
 
-    const [product, setProduct] = useState({});
+  const { products } = useProducts();
 
-    useEffect(() => {
-        getItem()
-    }, [])
+  const { id } = useParams();
 
-    const getItem = async() => {
-        try {
-            const result = await productAPI
-            setProduct(result)
-        } catch (error) {
-            console.log({error})
-        } finally {
-            console.log("Fin")
-        }
+  const [selectedItem, setSelectedItem] = useState(null);
 
+  useEffect(() => {
+    if (products.length > 0) {
+      const selectedProduct = products.find((product) => product.id === id);
+      setSelectedItem(selectedProduct);
+      console.log("seleecionado",selectedItem)
     }
+  }, [products]);
 
 
-
-
+    
       return (
           <div className='detailContainer'>
-              
             <div className='probemos'>
-                  <h1>{product.name && product.name}</h1>
+                  <h1>{selectedItem.name && selectedItem.name}</h1>
+                  
                   <hr/>
-                  {product.artist && <h2>By: {product.artist}</h2>}
-                  {product.genre && <h2>By: {product.genre}</h2>}
-                  {product.type && <h2>By: {product.type}</h2>}
-                  {product.price && <h2>By: {product.price}</h2>}
+                  {selectedItem.artist && <h2>By: {selectedItem.artist}</h2>}
+                  {selectedItem.genre && <h2>By: {selectedItem.genre}</h2>}
+                  {selectedItem.type && <h2>By: {selectedItem.type}</h2>}
+                  {selectedItem.price && <h2>By: {selectedItem.price}</h2>}
               </div>
 
 
               <div>
-                  {product.img && <img className='imgDetail' src={product.img} alt='A'/> }
+                  {selectedItem.img && <img className='imgDetail' src={selectedItem.img} alt='A'/> }
               
               </div>
 
@@ -47,3 +43,5 @@ export const ItemDetailContainer = () => {
         </div>
     )
 };
+
+export default ItemDetailContainer

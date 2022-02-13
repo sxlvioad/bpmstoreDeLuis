@@ -33,13 +33,13 @@ export const products = [
         id: "4",
         name: "Crackland",
         artist: "BLAME THE MONO",
-        genre: "Techno",
+        genre: "Progressive",
         type: "Track",
         price: "$1",
         stock: "10"
     },
     {
-        id: "4",
+        id: "5",
         name: "Crackland",
         artist: "BLAME THE MONO",
         genre: "Techno",
@@ -48,7 +48,7 @@ export const products = [
         stock: "10"
     },
     {
-        id: "4",
+        id: "6",
         name: "Crackland",
         artist: "BLAME THE MONO",
         genre: "Techno",
@@ -57,7 +57,25 @@ export const products = [
         stock: "10"
     },
     {
-        id: "4",
+        id: "7",
+        name: "Crackland",
+        artist: "BLAME THE MONO",
+        genre: "Progressive",
+        type: "Track",
+        price: "$1",
+        stock: "10"
+    },
+    {
+        id: "8",
+        name: "Crackland",
+        artist: "BLAME THE MONO",
+        genre: "TechHouse",
+        type: "Track",
+        price: "$1",
+        stock: "10"
+    },
+    {
+        id: "9",
         name: "Crackland",
         artist: "BLAME THE MONO",
         genre: "Techno",
@@ -66,7 +84,7 @@ export const products = [
         stock: "10"
     },
     {
-        id: "4",
+        id: "10",
         name: "Crackland",
         artist: "BLAME THE MONO",
         genre: "Techno",
@@ -75,7 +93,7 @@ export const products = [
         stock: "10"
     },
     {
-        id: "4",
+        id: "11",
         name: "Crackland",
         artist: "BLAME THE MONO",
         genre: "Techno",
@@ -84,7 +102,16 @@ export const products = [
         stock: "10"
     },
     {
-        id: "4",
+        id: "12",
+        name: "Crackland",
+        artist: "BLAME THE MONO",
+        genre: "TechHouse",
+        type: "Track",
+        price: "$1",
+        stock: "10"
+    },
+    {
+        id: "13",
         name: "Crackland",
         artist: "BLAME THE MONO",
         genre: "Techno",
@@ -93,43 +120,16 @@ export const products = [
         stock: "10"
     },
     {
-        id: "4",
+        id: "14",
         name: "Crackland",
         artist: "BLAME THE MONO",
-        genre: "Techno",
+        genre: "TechHouse",
         type: "Track",
         price: "$1",
         stock: "10"
     },
     {
-        id: "4",
-        name: "Crackland",
-        artist: "BLAME THE MONO",
-        genre: "Techno",
-        type: "Track",
-        price: "$1",
-        stock: "10"
-    },
-    {
-        id: "4",
-        name: "Crackland",
-        artist: "BLAME THE MONO",
-        genre: "Techno",
-        type: "Track",
-        price: "$1",
-        stock: "10"
-    },
-    {
-        id: "4",
-        name: "Crackland",
-        artist: "BLAME THE MONO",
-        genre: "Techno",
-        type: "Track",
-        price: "$1",
-        stock: "10"
-    },
-    {
-        id: "4",
+        id: "15",
         name: "Crackland",
         artist: "BLAME THE MONO",
         genre: "Techno",

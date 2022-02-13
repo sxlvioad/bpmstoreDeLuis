@@ -7,23 +7,15 @@ export const NavBar = () => {
         <div>
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">BPM Store</Navbar.Brand>
+                    <Navbar.Brand href="/">BPM Store</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">News</Nav.Link>
+                        <Nav.Link href="/">Home</Nav.Link>
                         <NavDropdown title="Genres" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Techno</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Tech House</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Progressive</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Downtempo</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Electro</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Dubstep</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Dance</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Drum & Bass</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Trance and PsyTrance</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Ambient</NavDropdown.Item>
+                        <NavDropdown.Item href="/genre/Techno">Techno</NavDropdown.Item>
+                        <NavDropdown.Item href="/genre/TechHouse">Tech House</NavDropdown.Item>
+                        <NavDropdown.Item href="/genre/Progressive">Progressive</NavDropdown.Item>
                                 
                         
                         </NavDropdown>

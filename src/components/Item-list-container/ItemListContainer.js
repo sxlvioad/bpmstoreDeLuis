@@ -1,47 +1,44 @@
 import React, { useEffect, useState } from 'react'
-import { products } from '../../data/products'
-import { productsAPI } from '../../helpers/promise'
+import { useParams } from 'react-router-dom'
+import useProducts from '../../hooks/useProducts'
 import { Item } from '../Item/Item'
 
 
 
 const ItemListContainer = () => {
 
-    const [selectedItem, setSelectedItem] = useState(null)
-    const [products, setProducts] = useState([]);
+    const { id } = useParams()
+    const { products } = useProducts();
+    console.log(products)
 
-    useEffect(() => {
-        getProducts()
-    }, [])
 
-    const getProducts = async() => {
-        try {
-            const result = await productsAPI
-            setProducts(result)
-        } catch (error) {
-            console.log({error})
-        } finally {
-            console.log("Fin")
-        }
-
-    }
+    const filterProducts= products.filter(({genre})=> genre === id)
 
     return (
         <>
             <h1>Last Releases</h1>
             <hr />
-            
-            <h3>Selected Products</h3>
-            <p>{selectedItem && selectedItem.name}</p>
-            <p>{selectedItem && selectedItem.artist}</p>
-            <p>Stock Seleccionado: { selectedItem && selectedItem.stock }</p>
-            <hr />
             <div className='card-grid'>
-            {products.map((product) => (
-                <Item key={product.id} {...product} setSelectedItem={setSelectedItem}/>
+                {!id &&
+                    products.map((product) => (
+                <Item key={product.id} {...product} />
             
-            ))}
+                    ))}
             </div>
+            <div className='card-grid'>
+                {id &&
+                    filterProducts.map((product) => {
+                        return (
+                            <Item key={product.id} {...product} />
+                        )
+                    })
+                }
+                
+            </div>
+            
+
+
+
         </>
     )
 }
