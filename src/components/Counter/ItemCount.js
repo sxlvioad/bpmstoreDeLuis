@@ -1,33 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
 
 
-export const ItemCount = ({stock, setStockSelected}) => {
 
-    const [count, setCount] = useState(0);
-    
-    useEffect(() => {
-        setStockSelected(count)
-    }, [count])
-    
+export default function ItemCount({ stock, initial, onAdd}) {
+	const [ counter, setCounter ] = useState(initial);
 
-    const minus = () => {
-        if (count <= 0) return
-        setCount(count -1)
-    }
+	const contar = val => {
+		if ((stock >= val) && (val >= 0)) {
+			setCounter(val)
+		}
+	}
 
-    const plus = () => {
-        if (count >= stock) return
-        setCount(count +1)
-    }
+	return <div className="counter">
+		<div>
+			<button onClick={() => contar(counter - 1)}>-</button>
+			<span>{counter}</span>
+			<button onClick={() => contar(counter + 1)}>+</button>
+		</div>
+		<button onClick={() => onAdd(counter)}>Agregar</button>
+	</div>
+}
 
-    return (
-        <>
-            <div>
-                <Button className='stockbtn' variant="primary" onClick={minus} >-</Button>
-                <span>{count}</span>
-                <Button variant="primary" className='stockbtn' onClick={plus}>+</Button>
-            </div>
-    
-        </>)
-};

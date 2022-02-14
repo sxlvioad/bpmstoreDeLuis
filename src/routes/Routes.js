@@ -11,7 +11,8 @@ export const Routes = () => {
             <Switch>
                 <Route path="/" element={<ItemListContainer />} />
                 <Route path="/genre/:id" element={<ItemListContainer />} />
-                <Route path='/item/:id' element={<ItemDetailContainer />}/>
+                <Route path='/item/:id' element={<ItemDetailContainer />} />
+                <Route path='/item/:id' element={<ItemDetailContainer />} />
             </Switch>
         </BrowserRouter>
   );

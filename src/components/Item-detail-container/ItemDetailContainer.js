@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
+import ItemCount from "../Counter/ItemCount";
+
 
 const ItemDetailContainer = () => {
   const { products } = useProducts();
@@ -8,6 +10,12 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
 
   const [selectedItem, setSelectedItem] = useState(null);
+
+  const [selectedCount, setSelectedCount] = useState(0)
+  
+  const addHandler = i => {
+		setSelectedCount(i)
+	}
 
   useEffect(() => {
     if (products.length > 0) {
@@ -29,12 +37,20 @@ const ItemDetailContainer = () => {
             {selectedItem.genre && <h2>By: {selectedItem.genre}</h2>}
             {selectedItem.type && <h2>By: {selectedItem.type}</h2>}
             {selectedItem.price && <h2>By: {selectedItem.price}</h2>}
+            
+                        {selectedCount > 0 ? 
+            <Link to="/cart">Add {setSelectedCount} to cart</Link> 
+            :
+              <ItemCount stock={selectedItem.stock} initial={0} onAdd={addHandler} />
+              }
           </div>
           <div>
             {selectedItem.img && (
               <img className="imgDetail" src={selectedItem.img} alt="A" />
             )}
+            
           </div>
+
         </div>
       )}
     </>
